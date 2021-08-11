@@ -151,7 +151,7 @@ int main() {
 	/*const wchar_t* stri = L"c:\\file.vhd";
 	LPTSTR ISOPath = const_cast<wchar_t *>(stri); */
 
-	PCWSTR ISOPath = _T("c:\\Users\\malav\\desktop\\file12.vhd");
+	PCWSTR ISOPath = _T("c:\\Users\\malav\\desktop\\file199.vhd");
 	HANDLE handle;
 	DWORD result;
 	ULONG bytesUsed;
