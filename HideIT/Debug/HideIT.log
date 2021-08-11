@@ -1,6 +1,10 @@
 ﻿  HideIT.cpp
-C:\Users\malav\source\repos\HideIT\HideIT\HideIT.cpp(157,8): warning C4101: 'bytesUsed': unreferenced local variable
-C:\Users\malav\source\repos\HideIT\HideIT\HideIT.cpp(227,11): warning C4101: 'errMsg': unreferenced local variable
-C:\Users\malav\source\repos\HideIT\HideIT\HideIT.cpp(228,10): warning C4101: 'next_token': unreferenced local variable
-C:\Users\malav\source\repos\HideIT\HideIT\HideIT.cpp(225,8): warning C4101: 'chBuffer': unreferenced local variable
+C:\Users\malav\source\repos\HideIT\HideIT\HideIT.cpp(158,8): warning C4101: 'bytesUsed': unreferenced local variable
+C:\Users\malav\source\repos\HideIT\HideIT\HideIT.cpp(228,11): warning C4101: 'errMsg': unreferenced local variable
+C:\Users\malav\source\repos\HideIT\HideIT\HideIT.cpp(229,10): warning C4101: 'next_token': unreferenced local variable
+C:\Users\malav\source\repos\HideIT\HideIT\HideIT.cpp(226,8): warning C4101: 'chBuffer': unreferenced local variable
+  file_readsrc.cpp
+C:\Users\malav\source\repos\HideIT\HideIT\file_readsrc.cpp(12,14): warning C4101: 'results': unreferenced local variable
+C:\Users\malav\source\repos\HideIT\HideIT\file_readsrc.cpp(14,7): warning C4101: 'c': unreferenced local variable
+  Generating Code...
   HideIT.vcxproj -> C:\Users\malav\source\repos\HideIT\Debug\HideIT.exe

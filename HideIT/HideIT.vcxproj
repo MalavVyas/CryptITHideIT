@@ -141,6 +141,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="HideIT.cpp" />
+    <ClCompile Include="file_readsrc.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="file_read.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

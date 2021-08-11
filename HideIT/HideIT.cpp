@@ -12,6 +12,7 @@
 #include<atlbase.h>
 #include<stdio.h>
 #include<strsafe.h>
+#include "file_read.h"
 
 #define BUFSIZE 255
 
