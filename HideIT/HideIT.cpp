@@ -13,6 +13,7 @@
 #include<stdio.h>
 #include<strsafe.h>
 #include "file_read.h"
+#include "base64.h"
 
 #define BUFSIZE 255
 
@@ -149,9 +150,11 @@ int create(std::wstring string2) {
 
 int main() {
 
-	/*const wchar_t* stri = L"c:\\file.vhd";
-	LPTSTR ISOPath = const_cast<wchar_t *>(stri); */
+	//Uncomment to invoke base64 wrapper
 
+	//wrapper_class wrapperObj;
+	//wrapperObj.base64wrap();
+	
 	PCWSTR ISOPath = _T("c:\\Users\\malav\\desktop\\file199.vhd");
 	HANDLE handle;
 	DWORD result;

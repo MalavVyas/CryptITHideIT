@@ -3,6 +3,7 @@
 #include "file_read.h"
 #include <vector>
 #include<sys/stat.h>
+#include "base64.h"
 using namespace std;
 
 const int BUFFER_SIZE = 1024;
@@ -117,4 +118,59 @@ string wrapper_class::decryption(string in_text) {
 	decObj.set(in_text, in_key);
 	string out_text = decObj.get();
 	return out_text;
+}
+
+void wrapper_class::base64wrap() {
+
+	ifstream in("C:\\Users\\Malav\\Desktop\\file10.vhd", ios::binary);
+	ofstream out("C:\\Users\\Malav\\Desktop\\file10_encoded.vhd");
+	in.seekg(0, ios::end);
+	int iSize = in.tellg();
+	in.seekg(0, ios::beg);
+
+	char* pBuff = new char[iSize];
+	memset(pBuff, 0, sizeof(pBuff));
+	in.read(pBuff, iSize);
+	int read_bytes = in.gcount();
+	cout << "Read bytes are" << read_bytes << endl;
+	int alloc_len = Base64encode_len(read_bytes);
+	char* encoded_str = (char*)malloc(alloc_len);
+	Base64encode(encoded_str, pBuff, read_bytes);
+	out.write(encoded_str, alloc_len);
+	cout << "Encoding Done" << endl;
+	free(encoded_str);
+	free(pBuff);
+
+	in.close();
+	out.close();
+
+	ifstream in2("C:\\Users\\Malav\\Desktop\\file10_encoded.vhd");
+	ofstream out2("C:\\Users\\Malav\\Desktop\\file10_decoded.vhd", ios::binary);
+
+	in2.seekg(0, ios::end);
+	iSize = in2.tellg();
+	in2.seekg(0, ios::beg);
+
+	pBuff = new char[iSize];
+	memset(pBuff, 0, sizeof(pBuff));
+	in2.read(pBuff, iSize);
+	read_bytes = in2.gcount();
+
+	//todo
+	//Properly manage base64 padding length
+	alloc_len = Base64decode_len(pBuff);
+	char* decoded_str = (char*)malloc(alloc_len);
+	Base64decode(decoded_str, pBuff);
+	out2.write(decoded_str, alloc_len -2);
+	cout << "Decoding Done" << endl;
+	cout << "Alloc len is " << alloc_len << endl;
+
+
+	free(decoded_str);
+	free(pBuff);
+
+	in2.close();
+	out2.close();
+
+	system("pause");
 }

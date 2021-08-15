@@ -1,10 +1,8 @@
-﻿  HideIT.cpp
-C:\Users\malav\source\repos\HideIT\HideIT\HideIT.cpp(158,8): warning C4101: 'bytesUsed': unreferenced local variable
-C:\Users\malav\source\repos\HideIT\HideIT\HideIT.cpp(228,11): warning C4101: 'errMsg': unreferenced local variable
-C:\Users\malav\source\repos\HideIT\HideIT\HideIT.cpp(229,10): warning C4101: 'next_token': unreferenced local variable
-C:\Users\malav\source\repos\HideIT\HideIT\HideIT.cpp(226,8): warning C4101: 'chBuffer': unreferenced local variable
-  file_readsrc.cpp
-C:\Users\malav\source\repos\HideIT\HideIT\file_readsrc.cpp(12,14): warning C4101: 'results': unreferenced local variable
-C:\Users\malav\source\repos\HideIT\HideIT\file_readsrc.cpp(14,7): warning C4101: 'c': unreferenced local variable
-  Generating Code...
+﻿  file_readsrc.cpp
+C:\Users\malav\source\repos\HideIT\HideIT\file_readsrc.cpp(13,14): warning C4101: 'results': unreferenced local variable
+C:\Users\malav\source\repos\HideIT\HideIT\file_readsrc.cpp(15,7): warning C4101: 'c': unreferenced local variable
+C:\Users\malav\source\repos\HideIT\HideIT\file_readsrc.cpp(128,12): warning C4244: 'initializing': conversion from 'std::streamoff' to 'int', possible loss of data
+C:\Users\malav\source\repos\HideIT\HideIT\file_readsrc.cpp(134,17): warning C4244: 'initializing': conversion from 'std::streamsize' to 'int', possible loss of data
+C:\Users\malav\source\repos\HideIT\HideIT\file_readsrc.cpp(151,19): warning C4244: '=': conversion from 'std::streamoff' to 'int', possible loss of data
+C:\Users\malav\source\repos\HideIT\HideIT\file_readsrc.cpp(157,25): warning C4244: '=': conversion from 'std::streamsize' to 'int', possible loss of data
   HideIT.vcxproj -> C:\Users\malav\source\repos\HideIT\Debug\HideIT.exe

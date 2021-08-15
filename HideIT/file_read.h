@@ -3,6 +3,7 @@ using namespace std;
 class wrapper_class {
 public:
 	void main_file();
+	void base64wrap();
 	string encryption(string in_text);
 	string decryption(string in_text);
 };

@@ -21,9 +21,15 @@
     <ClCompile Include="file_readsrc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="base64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="file_read.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base64.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
