@@ -155,7 +155,7 @@ int main() {
 	//wrapper_class wrapperObj;
 	//wrapperObj.base64wrap();
 	
-	PCWSTR ISOPath = _T("c:\\Users\\malav\\desktop\\file199.vhd");
+	PCWSTR ISOPath = _T("c:\\Users\\malav\\desktop\\file10_decoded.vhd");
 	HANDLE handle;
 	DWORD result;
 	ULONG bytesUsed;
@@ -273,6 +273,38 @@ int main() {
 	else if (choice == 'n') {
 		cout << "ok" << endl;
 	}
+	cout << "Encoding vhd with base64" << endl;
+	wrapper_class wrapperObj;
+	cout << "Do you want to encode the file?" << endl;
+	cin >> choice;
+	if (choice != 'y' && choice != 'n') {
+		cout << "Enter y or n only" << endl;
+	}
+	else if (choice == 'n') {
+		cout << "ok" << endl;
+	}
+	else if (choice == 'y') {
+		cout << "Encoding started" << endl;
+		wrapperObj.base64encodewrap((char*)"C:\\Users\\Malav\\Desktop\\file101.vhd", (char*)"C:\\Users\\Malav\\Desktop\\file101_encoded.vhd");
+	}
+
+	cout << "Decoding vhd with base64" << endl;
+	wrapper_class wrapperObj;
+	cout << "Do you want to decode the file?" << endl;
+	cin >> choice;
+	if (choice != 'y' && choice != 'n') {
+		cout << "Enter y or n only" << endl;
+	}
+	else if (choice == 'n') {
+		cout << "ok" << endl;
+	}
+	else if (choice == 'y') {
+		cout << "Decoding started" << endl;
+		wrapperObj.base64decodewrap((char*)"C:\\Users\\Malav\\Desktop\\file101_encoded.vhd", (char*)"C:\\Users\\Malav\\Desktop\\file101_decoded.vhd");
+	}
+
+
+
 	cout << "tata" << endl;
 	system("pause");
 }

@@ -120,16 +120,46 @@ string wrapper_class::decryption(string in_text) {
 	return out_text;
 }
 
-void wrapper_class::base64wrap() {
+void wrapper_class::base64decodewrap(char* encoded_filename, char* decoded_filename) {
 
-	ifstream in("C:\\Users\\Malav\\Desktop\\file10.vhd", ios::binary);
-	ofstream out("C:\\Users\\Malav\\Desktop\\file10_encoded.vhd");
+	ifstream in2(encoded_filename);
+	ofstream out2(decoded_filename, ios::binary);
+
+	in2.seekg(0, ios::end);
+	int iSize = in2.tellg();
+	in2.seekg(0, ios::beg);
+
+	char* pBuff = new char[iSize];
+	//memset(pBuff, 0, sizeof(pBuff));
+	in2.read(pBuff, iSize);
+	int read_bytes = in2.gcount();
+
+	//todo
+	//Properly manage base64 padding length
+	int alloc_len = Base64decode_len(pBuff);
+	char* decoded_str = (char*)malloc(alloc_len);
+	alloc_len = alloc_len - 2;
+	Base64decode(decoded_str, pBuff);
+	out2.write(decoded_str, alloc_len);
+	cout << "Decoding Done" << endl;
+	cout << "Alloc len is " << alloc_len << endl;
+
+
+	free(decoded_str);
+	delete[] pBuff;
+
+	in2.close();
+	out2.close();
+}
+void wrapper_class::base64encodewrap(char* filename, char* encoded_filename) {
+	ifstream in(filename, ios::binary);
+	ofstream out(encoded_filename);
 	in.seekg(0, ios::end);
 	int iSize = in.tellg();
 	in.seekg(0, ios::beg);
 
 	char* pBuff = new char[iSize];
-	memset(pBuff, 0, sizeof(pBuff));
+	//memset(pBuff, 0, sizeof(pBuff));
 	in.read(pBuff, iSize);
 	int read_bytes = in.gcount();
 	cout << "Read bytes are" << read_bytes << endl;
@@ -139,38 +169,10 @@ void wrapper_class::base64wrap() {
 	out.write(encoded_str, alloc_len);
 	cout << "Encoding Done" << endl;
 	free(encoded_str);
-	free(pBuff);
+	delete[] pBuff;
 
 	in.close();
 	out.close();
-
-	ifstream in2("C:\\Users\\Malav\\Desktop\\file10_encoded.vhd");
-	ofstream out2("C:\\Users\\Malav\\Desktop\\file10_decoded.vhd", ios::binary);
-
-	in2.seekg(0, ios::end);
-	iSize = in2.tellg();
-	in2.seekg(0, ios::beg);
-
-	pBuff = new char[iSize];
-	memset(pBuff, 0, sizeof(pBuff));
-	in2.read(pBuff, iSize);
-	read_bytes = in2.gcount();
-
-	//todo
-	//Properly manage base64 padding length
-	alloc_len = Base64decode_len(pBuff);
-	char* decoded_str = (char*)malloc(alloc_len);
-	Base64decode(decoded_str, pBuff);
-	out2.write(decoded_str, alloc_len -2);
-	cout << "Decoding Done" << endl;
-	cout << "Alloc len is " << alloc_len << endl;
-
-
-	free(decoded_str);
-	free(pBuff);
-
-	in2.close();
-	out2.close();
 
 	system("pause");
 }
